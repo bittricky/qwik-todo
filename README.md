@@ -1,65 +1,61 @@
-# Qwik City App ⚡️
+# Qwik Todo
 
-- [Qwik Docs](https://qwik.dev/)
-- [Discord](https://qwik.dev/chat)
-- [Qwik GitHub](https://github.com/QwikDev/qwik)
-- [@QwikDev](https://twitter.com/QwikDev)
-- [Vite](https://vitejs.dev/)
+A modern, fast Todo application built with Qwik and TailwindCSS. This application demonstrates the power of Qwik's resumability and fine-grained reactivity features.
 
----
+## Prerequisites
+
+- Node.js (^18.17.0 || ^20.3.0 || >=21.0.0)
+- pnpm (^8.15.6)
+
+## Getting Started
+
+1. Clone the repository:
+```bash
+git clone <repository-url>
+cd qwik-todo
+```
+
+2. Install dependencies:
+```bash
+pnpm install
+```
+
+3. Start the development server:
+```bash
+pnpm dev
+```
+
+The application will be available at `http://localhost:5173`
+
+## Available Scripts
+
+- `pnpm dev` - Start development server with SSR
+- `pnpm build` - Build for production
+- `pnpm preview` - Preview production build
+- `pnpm start` - Start production server
+- `pnpm lint` - Run ESLint
+- `pnpm fmt` - Format code with Prettier
+- `pnpm fmt.check` - Check code formatting
 
 ## Project Structure
 
-This project is using Qwik with [QwikCity](https://qwik.dev/qwikcity/overview/). QwikCity is just an extra set of tools on top of Qwik to make it easier to build a full site, including directory-based routing, layouts, and more.
-
-Inside your project, you'll see the following directory structure:
-
 ```
-├── public/
-│   └── ...
-└── src/
-    ├── components/
-    │   └── ...
-    └── routes/
-        └── ...
-```
-
-- `src/routes`: Provides the directory-based routing, which can include a hierarchy of `layout.tsx` layout files, and an `index.tsx` file as the page. Additionally, `index.ts` files are endpoints. Please see the [routing docs](https://qwik.dev/qwikcity/routing/overview/) for more info.
-
-- `src/components`: Recommended directory for components.
-
-- `public`: Any static assets, like images, can be placed in the public directory. Please see the [Vite public directory](https://vitejs.dev/guide/assets.html#the-public-directory) for more info.
-
-## Add Integrations and deployment
-
-Use the `pnpm qwik add` command to add additional integrations. Some examples of integrations includes: Cloudflare, Netlify or Express Server, and the [Static Site Generator (SSG)](https://qwik.dev/qwikcity/guides/static-site-generation/).
-
-```shell
-pnpm qwik add # or `pnpm qwik add`
+qwik-todo/
+├── src/
+│   ├── components/     # Reusable UI components
+│   ├── routes/         # Application routes and pages
+│   ├── entry.dev.tsx   # Development entry point
+│   ├── entry.ssr.tsx   # Server-side rendering entry point
+│   ├── global.css      # Global styles
+│   └── root.tsx        # Root component
+├── public/             # Static assets
+├── tailwind.config.js  # Tailwind CSS configuration
+└── vite.config.ts      # Vite configuration
 ```
 
-## Development
+## Technologies Used
 
-Development mode uses [Vite's development server](https://vitejs.dev/). The `dev` command will server-side render (SSR) the output during development.
-
-```shell
-npm start # or `pnpm start`
-```
-
-> Note: during dev mode, Vite may request a significant number of `.js` files. This does not represent a Qwik production build.
-
-## Preview
-
-The preview command will create a production build of the client modules, a production build of `src/entry.preview.tsx`, and run a local server. The preview server is only for convenience to preview a production build locally and should not be used as a production server.
-
-```shell
-pnpm preview # or `pnpm preview`
-```
-
-## Production
-
-The production build will generate client and server modules by running both client and server build commands. The build command will use Typescript to run a type check on the source code.
-
-```shell
-pnpm build # or `pnpm build`
-```
+- [Qwik](https://qwik.builder.io/) - The HTML-first framework
+- [Tailwind CSS](https://tailwindcss.com/) - Utility-first CSS framework
+- [TypeScript](https://www.typescriptlang.org/) - Type-safe JavaScript
+- [Vite](https://vitejs.dev/) - Next Generation Frontend Tooling
